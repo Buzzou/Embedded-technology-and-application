@@ -99,15 +99,11 @@ void VIC_Init(void)
 
 int main(void)
 {
-
 	Beep_Init();
 	UART0_Init();
 	VIC_Init();
 	UART0_SendByte(0x55);
-	while(1)
-	{
-		;
-	}
+	while(1){}
 	
 	return 0;
 }

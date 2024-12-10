@@ -1,59 +1,59 @@
 /****************************************Copyright (c)**************************************************
 ;**                                
-;**                                 Î÷ÄÏ¿Æ¼¼´óÑ§¼ÆËã»úÑ§Ôº
+;**                                 ï¿½ï¿½ï¿½Ï¿Æ¼ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§Ôº
 ;**                                   
 ;**                                 http://cs.swust.edu.cn
 ;**            
-;**             ÈÕÆÚ£º   2004.11.8
-;**             ÃèÊö£º  lpc2200.hÎÄ¼ş£¬Ó²¼şÏà¹Ø×ÊÔ´ÅäÖÃÎÄ¼ş£¬Ö§³ÖLPC2200ÏµÁĞĞ¾Æ¬ºÍLpc2100ÏµÁĞ
-;**                     Ğ¾Æ¬£¬¶ÔÓÚÃ¿¸öC»òC++³ÌĞò¹¤³Ì±ØĞë°üº¬¸ÃÎÄ¼şÀ´Íê³É¶ÔARM×ÊÔ´µÄ·ÖÅä£¬ËùÓĞ
-;**                     VPBÍâÉèµØÖ·ÓÉ¸ÃÎÄ¼ş·ÖÅä£¬·ÖÅäµÄµØÖ·Ó¦±£³ÖÓëÊµ¼ÊÓ²¼ş×ÊÔ´ÏàÍ¬¡£´íÎóµÄ·Ö
-;**                     Åä½«µ¼ÖÂ³ÌĞòµÄÔËĞĞ²»Õı³£¡£
+;**             ï¿½ï¿½ï¿½Ú£ï¿½   2004.11.8
+;**             ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  lpc2200.hï¿½Ä¼ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ö§ï¿½ï¿½LPC2200Ïµï¿½ï¿½Ğ¾Æ¬ï¿½ï¿½Lpc2100Ïµï¿½ï¿½
+;**                     Ğ¾Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Cï¿½ï¿½C++ï¿½ï¿½ï¿½ò¹¤³Ì±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ARMï¿½ï¿½Ô´ï¿½Ä·ï¿½ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½
+;**                     VPBï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½É¸ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½Äµï¿½Ö·Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½
+;**                     ï¿½ä½«ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;**
 ;**------------------------------------------------------------------------------------------------------
 ;********************************************************************************************************/
 /********************************************************************************************************/
 /* EXTERNAL MEMORY CONTROLLER (EMC) */
-/* Íâ²¿×ÜÏß¿ØÖÆÆ÷ */
+/* ï¿½â²¿ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #define BCFG0           (*((volatile unsigned int *) 0xFFE00000))       /* lpc22xx only */
 #define BCFG1           (*((volatile unsigned int *) 0xFFE00004))       /* lpc22xx only */
 #define BCFG2           (*((volatile unsigned int *) 0xFFE00008))       /* lpc22xx only */
 #define BCFG3           (*((volatile unsigned int *) 0xFFE0000C))       /* lpc22xx only */
 
 /* External Interrupts */
-/* Íâ²¿ÖĞ¶Ï¿ØÖÆ¼Ä´æÆ÷ */
+/* ï¿½â²¿ï¿½Ğ¶Ï¿ï¿½ï¿½Æ¼Ä´ï¿½ï¿½ï¿½ */
 #define EXTINT          (*((volatile unsigned char *) 0xE01FC140))
 #define EXTWAKE         (*((volatile unsigned char *) 0xE01FC144))
 #define EXTMODE         (*((volatile unsigned char *) 0xE01FC148))      /* no in lpc210x*/
 #define EXTPOLAR        (*((volatile unsigned char *) 0xE01FC14C))      /* no in lpc210x*/
 
 /* SMemory mapping control. */
-/* ÄÚ´æremap¿ØÖÆ¼Ä´æÆ÷ */
+/* ï¿½Ú´ï¿½remapï¿½ï¿½ï¿½Æ¼Ä´ï¿½ï¿½ï¿½ */
 #define MEMMAP          (*((volatile unsigned char *) 0xE01FC040))
 
 /* Phase Locked Loop (PLL) */
-/* PLL¿ØÖÆ¼Ä´æÆ÷ */
+/* PLLï¿½ï¿½ï¿½Æ¼Ä´ï¿½ï¿½ï¿½ */
 #define PLLCON          (*((volatile unsigned char *) 0xE01FC080))
 #define PLLCFG          (*((volatile unsigned char *) 0xE01FC084))
 #define PLLSTAT         (*((volatile unsigned short*) 0xE01FC088))
 #define PLLFEED         (*((volatile unsigned char *) 0xE01FC08C))
 
 /* Power Control */
-/* ¹¦ÂÊ¿ØÖÆ¼Ä´æÆ÷ */
+/* ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½Æ¼Ä´ï¿½ï¿½ï¿½ */
 #define PCON            (*((volatile unsigned char *) 0xE01FC0C0))
 #define PCONP           (*((volatile unsigned long *) 0xE01FC0C4))
 
 /* VPB Divider */
-/* VLSIÍâÉè×ÜÏß£¨VPB£©·ÖÆµ¼Ä´æÆ÷ */
+/* VLSIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½VPBï¿½ï¿½ï¿½ï¿½Æµï¿½Ä´ï¿½ï¿½ï¿½ */
 #define VPBDIV          (*((volatile unsigned char *) 0xE01FC100))
 
 /* Memory Accelerator Module (MAM) */
-/* ´æ´¢Æ÷¼ÓËÙÄ£¿é */
+/* ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ */
 #define MAMCR           (*((volatile unsigned char *) 0xE01FC000))
 #define MAMTIM          (*((volatile unsigned char *) 0xE01FC004))
 
 /* Vectored Interrupt Controller (VIC) */
-/* ÏòÁ¿ÖĞ¶Ï¿ØÖÆÆ÷(VIC)µÄÌØÊâ¼Ä´æÆ÷ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½(VIC)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define VICIRQStatus    (*((volatile unsigned long *) 0xFFFFF000))
 #define VICFIQStatus    (*((volatile unsigned long *) 0xFFFFF004))
 #define VICRawIntr      (*((volatile unsigned long *) 0xFFFFF008))
@@ -99,19 +99,22 @@
 #define VICVectCntl15   (*((volatile unsigned long *) 0xFFFFF23C))
 
 /* Pin Connect Block */
-/* ¹Ü½ÅÁ¬½ÓÄ£¿é¿ØÖÆ¼Ä´æÆ÷ */
+/* ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Æ¼Ä´ï¿½ï¿½ï¿½ */
 #define PINSEL0         (*((volatile unsigned long *) 0xE002C000))
 #define PINSEL1         (*((volatile unsigned long *) 0xE002C004))
 #define PINSEL2         (*((volatile unsigned long *) 0xE002C014))      /* no in lpc210x*/
 
 /* General Purpose Input/Output (GPIO) */
-/* Í¨ÓÃ²¢ĞĞIO¿ÚµÄÌØÊâ¼Ä´æÆ÷ */
+/* Í¨ï¿½Ã²ï¿½ï¿½ï¿½IOï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define IOPIN           (*((volatile unsigned long *) 0xE0028000))      /* lpc210x only */
 #define IOSET           (*((volatile unsigned long *) 0xE0028004))      /* lpc210x only */
 #define IODIR           (*((volatile unsigned long *) 0xE0028008))      /* lpc210x only */
 #define IOCLR           (*((volatile unsigned long *) 0xE002800C))      /* lpc210x only */
 
 #define IO0PIN          (*((volatile unsigned long *) 0xE0028000))      /* no in lpc210x*/
+/*å‡å¦‚ 0xE0028004 æ˜¯ä¸€æ‰‡é—¨çš„åœ°å€ï¼š
+ *volatile ç¡®ä¿æˆ‘ä»¬æ¯æ¬¡éƒ½äº²è‡ªå»çœ‹è¿™æ‰‡é—¨çš„çŠ¶æ€ï¼Œè€Œä¸æ˜¯è®°ä½ä¸Šæ¬¡çœ‹çš„çŠ¶æ€ã€‚
+ *æŒ‡é’ˆå¼•ç”¨è®©æˆ‘ä»¬ç»™è¿™æ‰‡é—¨å–ä¸ªåå­—ï¼Œæ¯”å¦‚ IO0SETï¼Œæ–¹ä¾¿ä»¥åè°ƒç”¨å®ƒï¼Œè€Œä¸æ˜¯æ¯æ¬¡è®°ä½å¤æ‚çš„åœ°å€ç¼–å·ã€‚*/
 #define IO0SET          (*((volatile unsigned long *) 0xE0028004))      /* no in lpc210x*/
 #define IO0DIR          (*((volatile unsigned long *) 0xE0028008))      /* no in lpc210x*/
 #define IO0CLR          (*((volatile unsigned long *) 0xE002800C))      /* no in lpc210x*/
@@ -132,7 +135,7 @@
 #define IO3CLR          (*((volatile unsigned long *) 0xE002803C))      /* lpc22xx only */
 
 /* Universal Asynchronous Receiver Transmitter 0 (UART0) */
-/* Í¨ÓÃÒì²½´®ĞĞ¿Ú0(UART0)µÄÌØÊâ¼Ä´æÆ÷ */
+/* Í¨ï¿½ï¿½ï¿½ì²½ï¿½ï¿½ï¿½Ğ¿ï¿½0(UART0)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define U0RBR           (*((volatile unsigned char *) 0xE000C000))
 #define U0THR           (*((volatile unsigned char *) 0xE000C000))
 #define U0IER           (*((volatile unsigned char *) 0xE000C004))
@@ -145,7 +148,7 @@
 #define U0DLM           (*((volatile unsigned char *) 0xE000C004))
 
 /* Universal Asynchronous Receiver Transmitter 1 (UART1) */
-/* Í¨ÓÃÒì²½´®ĞĞ¿Ú1(UART1)µÄÌØÊâ¼Ä´æÆ÷ */
+/* Í¨ï¿½ï¿½ï¿½ì²½ï¿½ï¿½ï¿½Ğ¿ï¿½1(UART1)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define U1RBR           (*((volatile unsigned char *) 0xE0010000))
 #define U1THR           (*((volatile unsigned char *) 0xE0010000))
 #define U1IER           (*((volatile unsigned char *) 0xE0010004))
@@ -160,7 +163,7 @@
 #define U1DLM           (*((volatile unsigned char *) 0xE0010004))
 
 /* I2C (8/16 bit data bus) */
-/* Ğ¾Æ¬¼ä×ÜÏß£¨I2C£©µÄÌØÊâ¼Ä´æÆ÷ */
+/* Ğ¾Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½I2Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define I2CONSET        (*((volatile unsigned char *) 0xE001C000))
 #define I2STAT          (*((volatile unsigned char *) 0xE001C004))
 #define I2DAT           (*((volatile unsigned char *) 0xE001C008))
@@ -170,7 +173,7 @@
 #define I2CONCLR        (*((volatile unsigned char *) 0xE001C018))
 
 /* SPI (Serial Peripheral Interface) */
-/* SPI×ÜÏß½Ó¿ÚµÄÌØÊâ¼Ä´æÆ÷ */
+/* SPIï¿½ï¿½ï¿½ß½Ó¿Úµï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
         /* only for lpc210x*/
 #define SPI_SPCR        (*((volatile unsigned char *) 0xE0020000))
 #define SPI_SPSR        (*((volatile unsigned char *) 0xE0020004))
@@ -191,7 +194,7 @@
 #define S1PINT          (*((volatile unsigned char *) 0xE003001C))      /* no in lpc210x*/
 
 /* CAN CONTROLLERS AND ACCEPTANCE FILTER */
-/* CAN¿ØÖÆÆ÷ºÍ½ÓÊÕÂ·²¨Æ÷ */
+/* CANï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ */
 #define CAN1MOD         (*((volatile unsigned long *) 0xE0044000))      /* lpc2119\lpc2129\lpc2292\lpc2294 only */
 #define CAN1CMR         (*((volatile unsigned long *) 0xE0044004))      /* lpc2119\lpc2129\lpc2292\lpc2294 only */
 #define CAN1GSR         (*((volatile unsigned long *) 0xE0044008))      /* lpc2119\lpc2129\lpc2292\lpc2294 only */
@@ -353,7 +356,7 @@
 
 
 /* Timer 0 */
-/* ¶¨Ê±Æ÷0µÄÌØÊâ¼Ä´æÆ÷ */
+/* ï¿½ï¿½Ê±ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define T0IR            (*((volatile unsigned long *) 0xE0004000))
 #define T0TCR           (*((volatile unsigned long *) 0xE0004004))
 #define T0TC            (*((volatile unsigned long *) 0xE0004008))
@@ -372,7 +375,7 @@
 #define T0EMR           (*((volatile unsigned long *) 0xE000403C))
 
 /* Timer 1 */
-/* ¶¨Ê±Æ÷1µÄÌØÊâ¼Ä´æÆ÷ */
+/* ï¿½ï¿½Ê±ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define T1IR            (*((volatile unsigned long *) 0xE0008000))
 #define T1TCR           (*((volatile unsigned long *) 0xE0008004))
 #define T1TC            (*((volatile unsigned long *) 0xE0008008))
@@ -391,7 +394,7 @@
 #define T1EMR           (*((volatile unsigned long *) 0xE000803C))
 
 /* Pulse Width Modulator (PWM) */
-/* Âö¿íµ÷ÖÆÆ÷µÄÌØÊâ¼Ä´æÆ÷ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define PWMIR           (*((volatile unsigned long *) 0xE0014000))
 #define PWMTCR          (*((volatile unsigned long *) 0xE0014004))
 #define PWMTC           (*((volatile unsigned long *) 0xE0014008))
@@ -409,12 +412,12 @@
 #define PWMLER          (*((volatile unsigned long *) 0xE0014050))
 
 /* A/D CONVERTER */
-/* A/D×ª»»Æ÷ */
+/* A/D×ªï¿½ï¿½ï¿½ï¿½ */
 #define ADCR            (*((volatile unsigned long *) 0xE0034000))      /* no in lpc210x*/
 #define ADDR            (*((volatile unsigned long *) 0xE0034004))      /* no in lpc210x*/
 
 /* Real Time Clock */
-/* ÊµÊ±Ê±ÖÓµÄÌØÊâ¼Ä´æÆ÷ */
+/* ÊµÊ±Ê±ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define ILR             (*((volatile unsigned char *) 0xE0024000))
 #define CTC             (*((volatile unsigned short*) 0xE0024004))
 #define CCR             (*((volatile unsigned char *) 0xE0024008))
@@ -443,14 +446,14 @@
 #define PREFRAC         (*((volatile unsigned short*) 0xE0024084))
 
 /* Watchdog */
-/* ¿´ÃÅ¹·µÄÌØÊâ¼Ä´æÆ÷ */
+/* ï¿½ï¿½ï¿½Å¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ */
 #define WDMOD           (*((volatile unsigned char *) 0xE0000000))
 #define WDTC            (*((volatile unsigned long *) 0xE0000004))
 #define WDFEED          (*((volatile unsigned char *) 0xE0000008))
 #define WDTV            (*((volatile unsigned long *) 0xE000000C))
 
 /* Define firmware Functions */
-/* ¶¨Òå¹Ì¼şº¯Êı */
+/* ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #define rm_init_entry()             ((void (*)())(0x7fffff91))()
 #define rm_undef_handler()          ((void (*)())(0x7fffffa0))()
 #define rm_prefetchabort_handler()  ((void (*)())(0x7fffffb0))()

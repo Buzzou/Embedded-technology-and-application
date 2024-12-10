@@ -28,7 +28,7 @@ void Timer0_Init(uint16 time)
 	// 设置VIC
 	VICIntSelect = VICIntSelect & (~(1<<4));	// 	VICIntEnable[4]=0，定时器0（通道#4）中断类型设为IRQ
 	VICVectCntl0 = 0x20 | 4;	// 第6位为1是使能(0x20)，低5位设为4，其他位为0
-	VICVectAddr0 = (unsigned int) Timer0_IRQ;	// 定时器0的中断服务程序地址
+	VICVectAddr0 = (unsigned int) Timer0_IRQ;	// 定时器0的中断服务程序地址 - 满足硬件寄存器对中断服务函数地址为整数类型的要求
 	VICIntEnable = (1<<4);	// Timer0在通道#4，VICIntEnable[4]=1, 让定时器0中断使能
 	T0TCR = 0x01;	// 启动定时器0
 }
@@ -55,8 +55,6 @@ void SendData(uint16 data)
 uint8 flag = 1;
 void __irq Timer0_IRQ(void)	// T0的TC == T0的MR0时，中断
 {
-	
-	
 	if(flag)
 		{
 			SendData(0x5555);
